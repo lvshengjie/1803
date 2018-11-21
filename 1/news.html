@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<script>
+			//1"china is my country",将第一个字符和最后一个字符取出来，然后重组在一起成一个字符串
+			function a(){
+			var s ="china is my country";
+			var c =s.charAt(0);//取第一个字符
+			var c1=s.charAt(s.length-1);//取最后一个字符
+			console.log("new string:"+(c+c1));
+			}
+
+			a();
+			//2 a.txt取出文件的后缀
+			function b(fileName){
+				 var dotAt=fileName.lastIndexOf('.');//从后面找“.”所在位置
+				 var surfix=fileName.substr(dotAt);//从dotat位置取子串
+				console.log(surfix);
+			}
+			b("a.txt");
+
+			//3 a.b.txt取出文件的后缀
+			function c(fileName){
+				var dotAt=fileName.lastIndexOf('.');
+				var surfix=fileName.substr(dotAt);
+				var prefix=fileName.substring(0, dotAt+1);//前缀，取'.'前面的东西
+				console.log("前缀:"+prefix);
+				console.log("后缀:"+surfix);
+
+			}
+			c("a.b.txt");
+
+			//4 a.txt,要求取出文件的后缀，配以“myName"为前缀的构成新文件，然后输出
+			function d(fileName){
+				var dotat=fileName.lastIndexOf('.');
+				
+				var surfix=fileName.substring(dotat);
+
+				return "myName"+surfix;
+			}
+			console.log(d("hello.htl"));
+
+			//"china is my country"将每一个单词输出
+			function f(){
+				s="china is my country";
+				var array=s.split(' ');//用空格将字符串分割成一个数组
+				for(var i=0;i<array.length;i++){
+					console.log(i + ":"+array[i]);
+				}
+			}
+			f();
+			console.log('-----------------------------');
+			//第二种方法
+
+			function f2(){
+				s="china is my country";
+				var start=0;
+				while (true) {
+					var at=s.indexOf(' ',start);
+					if(-1!=at){
+						console.log(s.substring(start,at));
+					}
+					else {
+						console.log(s.substring(start));
+						break;
+					}
+					start=at+1;
+				}
+
+
+			}
+			f2();
+
+
+			//"java is a primary progamming languge."里面有多少个a 
+				s="java is a primary progamming languge.";
+				for(var count=0,at=0;true;count++,at++){
+					at =s.indexOf('a',at);
+					if(-1==at){
+						break;
+					}
+				}
+				console.log("a have :"+count);
+		</script>
+
+</body>
+</html>

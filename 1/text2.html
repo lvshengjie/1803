@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>d</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+
+		/*MY_NAME="zhang";
+
+		window.myName="li";
+
+		console.log('0:'+window.MY_NAME);
+		console.log('1:'+window.myName);
+
+		delete(window.MY_NAME);
+		delete(window.myName);
+		
+		console.log('2:'+window.MY_NAME);
+		console.log('3:'+window.myName);*/
+		function f2()
+		{
+				s="china is my country";
+				var start=0;
+				while (true) 
+				{
+					var at=s.indexOf(' ',start);
+					if(-1!=at)
+					{
+						console.log(s.substring(start,at));
+					}
+					else
+					{
+						console.log(s.substring(start));
+						break;
+					}
+					start=at+1;
+				}
+
+
+		}
+			f2();
+
+	</script>
+	
+</body>
+</html>
