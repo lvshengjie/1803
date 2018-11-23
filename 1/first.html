@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//1."java is a primary progamming language.javascript is a primary progamming language."要求，将每局的首字符改为大写
+			s="java is a primary progamming language. javascript is a primary progamming language.";
+			var c=s.split(".");
+			//第二种方法：var c=s.match(/([\w\s]+\.)/g);
+			for(var i=0;i<c.length;i++){
+				var elem=c[i];//根据下标，取出数据中的元素
+				elem=elem.trim();
+				if(''!=elem){
+					var first=elem.charAt(0).toUpperCase();//取出首字符，立马让他变为大写
+					var news=first+elem.substring(1);//首字符和字符串第二个字符开始直到最后一个字符合拼
+					console.log(news);
+				}
+
+				
+
+			} 
+			console.log('--------------------------------');
+		
+		//2.将"java is a primary progamming language.javascript is a primary progamming language."中内容按单词，从后往前，逐个输出
+		    s="java is a primary progamming language.javascript is a primary progamming language.";
+		    var c=s.split(" ");
+		    //第二种方法：var c=s.match(/\b\w+\b/g);
+		    for(var i=c.length-1;i>=0;i--){
+		    	console.log(c[i]);
+		    }
+			console.log('--------------------------------');
+		
+
+		//3. “在中国的邪教中，有一种叫不二功的大法”，将“不二功”这个敏感词替换xx
+		s="在中国的邪教中，有一种叫不二功的大法";
+		var c=s.replace(/不二功/g,"xxx");
+		console.log(c);
+		console.log('--------------------------------');
+		
+
+		//4.for循环写的计算"java is a primary progamming language.javascript is a primary progamming language."中有多少个‘a’，更改为用white实现
+		s="java is a primary progamming language.javascript is a primary progamming language.";
+		    var count=0;
+			var at=0;
+			while (true) {
+
+			at=s.indexOf('a',at);
+			if(-1!=at){
+				count++;
+				at=at+1;
+			}
+			else {
+				console.log("a have :"+count);
+				break;
+			}
+		
+		}
+		console.log('--------------------------------');
+		//5.将字符串"abcjkl"中的字符变为"albkcj"
+			s="abcjkl";
+			var news='';
+			if(s.length%2==0){
+				for(var i=0;i<s.length;i++){
+					var f=s.charAt(i);
+					var w=s.charAt(s.length-1+i);
+					news=news+(f+w);
+				}
+				console.log(news);
+			}
+
+
+		//6.计算"java is a primary progamming language.javascript is a primary progamming language."中，最长的单词是哪个，有多长
+			s="java is a primary progam language. javascript is a primary progam language.";
+			var c=s.split(" ");
+	
+			for(i=0;i<c.length-1;i++){
+				if(c[i].length>c[i+1].length){
+					c[i+1]=c[i];
+					
+				}
+			}
+			console.log(c[c.length-1]);
+			console.log(c[c.length-1].length);
+			 
+			
+			console.log('--------------------------------');
+
+		//7."china is my country"中第一个单词，变为全部大写的。
+			s="china is my country";
+			//①按照空格分割字符串      
+			var c = s.split(' ');
+			//②遍历数组
+			for(var i=0;i<c.length;i++){
+  			var s = c[i].slice(0,1).toUpperCase(); 
+  			var h = c[i].slice(1);
+  			c[i]=s+h;
+			}
+			//⑥把数组转成字符串
+			console.log(c.join(' '));
+			console.log('--------------------------------');
+
+
+
+	</script>
+
+</body>
+</html>
